@@ -10,9 +10,6 @@
 # проверка что есть доступ к апи
 
 
-class Vacancy:
-    def __init__(self, title,url,salary,description):
-        self.title = title
-        self.url = url
-        self.salary = salary
-        self.description = description
+
+#2 достать с хх обработать через обработчик вакансий и записать все в файл
+#далее выбираю меню отсортировать по з.п функция или отфильтровать по ключевому слову например джуниор и напечатал пользователю
