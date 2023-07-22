@@ -3,7 +3,19 @@ def str_to_digit(input_str):
 
 
 class Vacancy:
-    def __init__(self, title,url,salary,requirement):
+    """
+       Класс для работы с вакансиями.
+       Атрибуты:
+           - ид вакансии
+           - название вакансии;
+           - ссылка на вакансию;
+           - зарплата;
+           - краткое описание;
+
+
+       """
+    def __init__(self, title,url,salary,requirement,id):
+        self.id = id
         self.title = title
         self.url = url
         self.salary = salary
