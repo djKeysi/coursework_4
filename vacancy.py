@@ -1,3 +1,5 @@
+
+
 def str_to_digit(input_str):
     return int(input_str.split(" ")[0])
 
@@ -25,9 +27,12 @@ class Vacancy:
         #return f"{self.title} {self.salary} {self.description} {self.url}"
 
     def __str__(self):
+        r=""
+        for i in zip(self.id,self.title,self.url,self.salary,self.requirement):
+            return " ".join(i)
         #return print("{:<100} | {:<100} | {:<100} | {:>30}".format(self.title,self.url,self.salary,self.requirement))
         #return print(print(" {:<25} | {:<25} | {:>11} | {:>11}".format(self.title, self.url, self.salary, self.requirement)))
-        return f"{self.title}                             {self.url}                                      {self.salary}                                  {self.requirement} "
+        #return f"{self.title}                             {self.url}                                      {self.salary}                                  {self.requirement} "
 
 
     def __eq__(self, other):
