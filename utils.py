@@ -1,23 +1,33 @@
 import json
+
 def print_welcome_user():
-    print("\n1. headhunter.ru\n2. superjob.ru\n"
-          "\n0. Выход\n")
+    return "1. headhunter.ru\n2. superjob.ru \
+          \n3. Выход\n"
+
 def print_operations():
-    print("Введите поисковый запрос;"
-          "\n1. Получить все вакансии по профессии"
-          "\n2. Получить вакансии по желаемой зарплате"
-          "\n3. Выход\n"
-          )
+    return "Введите поисковый запрос; \
+          \n1. Получить все вакансии \
+          \n2. Получить вакансии по желаемой зарплате \
+          \n3. Назад \
+          \n4. Выход\n"
+
 
 def prof():
-    print("Введите желаемую профессию\n")
+    return "Введите желаемую профессию\n"
+
+def count_vacansies():
+    return "Введите количество вакансий для вывода от 1 до 100\n"
+
 def salary():
-    print("Введите желаемую зарплату\n")
+    return "Введите желаемую зарплату\n"
+
+def header():
+    return "|id вакансии| Наименование вакансии           | Зарплата       |       Ссылка на вакансию |                       Описание вакансии\n"
 
 def delete_vacancy(user_del):
     """Метод удаления вакансии по id """
     try:
-        with open("data.json", 'r', encoding='utf-8') as file:
+        with open("../data.json", 'r', encoding='utf-8') as file:
             data = json.load(file)
             minimal = 0
             for txt in data['items']:
@@ -28,11 +38,11 @@ def delete_vacancy(user_del):
                     #print("Нет такого id")
                 minimal += minimal
 
-        with open("data.json", 'w', encoding='utf-8') as file:
+        with open("../data.json", 'w', encoding='utf-8') as file:
             json.dump(data, file, indent=2, ensure_ascii=False)
         print("УДАЛЕНО")
     except KeyError:
-        with open("data.json", 'r', encoding='utf-8') as file:
+        with open("../data.json", 'r', encoding='utf-8') as file:
             data = json.load(file)
             minimal = 0
             for txt in data['objects']:
@@ -42,7 +52,7 @@ def delete_vacancy(user_del):
                 #else:
                     #print("Нет такого id")
                 minimal += minimal
-        with open("data.json", 'w', encoding='utf-8') as file:
+        with open("../data.json", 'w', encoding='utf-8') as file:
             json.dump(data, file, indent=2, ensure_ascii=False)
         print("УДАЛЕНО")
 
